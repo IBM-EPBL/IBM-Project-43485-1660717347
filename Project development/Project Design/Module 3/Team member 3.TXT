@@ -1,0 +1,6 @@
+model = nn.Sequential(create_body(xresnet50, pretrained=False),create_head(nf=2048, n_out=2))
+learn = Learner(dls, model, loss_func=CrossEntropyLossFlat(), metrics=accuracy)
+
+learn.fit_one_cycle(40,1e-2)
+learn.save(path/'kidney-50')
+learn.recorder.plot_loss(skip_start=0, with_valid=True)
