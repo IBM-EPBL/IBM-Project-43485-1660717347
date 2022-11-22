@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/style.css">
+        <title>EARLY DETECTION OF CHRONIC KIDNEY DISEASES</title>
+    </head>
+    <body>
+        <div class="form-wrapper signup-form">
+            <form action="/login" method="POST" class="form">
+                <h1>KIDNEY DISEASE PREDICTOR</h1>
+                <h4>ENTER THE VALUES BELOW</h4>
+                <p>Prediction Result: <br> 
+                   0: Chronic Kidney Disease has been found. <br>
+                   1: Chronic Kidney Disease has not been found. </p>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="age" placeholder="Age" required>
+                    <label for="" class="label">Age</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="bp" placeholder="Blood Pressure" required>
+                    <label for="" class="label">Blood Pressure</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="sg" placeholder="Specific Gravity" required>
+                    <label for="" class="label">Specific Gravity</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="alb" placeholder="Albumin" required>
+                    <label for="" class="label">Albumin</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="sugar" placeholder="Sugar" required>
+                    <label for="" class="label">Sugar</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="RBC" placeholder="RBC" required>
+                    <label for="" class="label">Red Blood Cells</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="bacteria" placeholder="Bacteria" required>
+                    <label for="" class="label">Bacteria</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="bgr" placeholder="BGR" required>
+                    <label for="" class="label">Blood Glucose Random</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="bu" placeholder="BU" required>
+                    <label for="" class="label">Blood Urea</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="sc" placeholder="SC" required>
+                    <label for="" class="label">Serum Creatinine</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="sodium" placeholder="Sodium" required>
+                    <label for="" class="label">Sodium</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="haemo" placeholder="Haemo" required>
+                    <label for="" class="label">Haemoglobin</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="pcv" placeholder="PCV" required>
+                    <label for="" class="label">Packed Cell Volume</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="rbc-count" placeholder="RBC Count" required>
+                    <label for="" class="label">RBC Count</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="hypertension" placeholder="Hypertension" required>
+                    <label for="" class="label">Hypertension</label>
+                </div>
+                <div class="inputContainer">
+                    <input type="text" class="input" name="pe" placeholder="PE" required>
+                    <label for="" class="label">Peda Edema</label>
+                </div>
+
+                <div class="result">
+                    <b>{{y}}</b>
+                </div>
+                <input type="submit" class="submitBtn" value="Predict">
+                <a href="/loginForm" style="text-decoration: none;"></a>
+            </form>
+        </div>
+          
+    </body>
+</html>
