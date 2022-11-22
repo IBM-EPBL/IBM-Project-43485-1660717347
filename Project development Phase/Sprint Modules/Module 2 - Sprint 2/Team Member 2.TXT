@@ -1,0 +1,3 @@
+dls.c, len(dls.train_ds), len(dls.valid_ds)
+dls.vocab
+dls.show_batch()

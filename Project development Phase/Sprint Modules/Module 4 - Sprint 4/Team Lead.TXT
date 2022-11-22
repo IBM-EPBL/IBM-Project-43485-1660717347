@@ -1,0 +1,19 @@
+all_files= get_image_files(path)
+augs = [RandomResizedCropGPU(size=224, min_scale=0.75), Rotate(), Zoom()]
+dblock = DataBlock(blocks=(ImageBlock(cls=PILImage), CategoryBlock),
+                   splitter=GrandparentSplitter(train_name='Train', valid_name='Test'),
+                   get_y=parent_label,
+                   item_tfms=Resize(512, method="squish"),
+                   batch_tfms=augs,
+                   )
+
+dls_test = dblock.dataloaders(all_files)
+
+print("Number of examples in testing:", len(dls_test.valid_ds))
+
+model = nn.Sequential(create_body(xresnet50, pretrained=False),create_head(nf=2048, n_out=2))
+
+interp = ClassificationInterpretation.from_learner(learn1)
+interp.plot_confusion_matrix()
+
+interp.print_classification_report()

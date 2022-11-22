@@ -1,0 +1,14 @@
+!pip install -Uqq fastbook
+import fastbook
+fastbook.setup_book()
+from fastbook import *
+train_fnames = get_image_files("Train")
+augs = [RandomResizedCropGPU(size=224, min_scale=0.75), Rotate(), Zoom()]
+dblock = DataBlock(blocks=(ImageBlock(cls=PILImage), CategoryBlock),
+                   splitter=RandomSplitter(valid_pct=0.2, seed=23),
+                   get_y=parent_label,
+                   item_tfms=Resize(512, method="squish"),
+                   batch_tfms=augs,
+                   )
+
+dls = dblock.dataloaders(train_fnames)
